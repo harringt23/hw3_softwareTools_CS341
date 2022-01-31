@@ -1,0 +1,159 @@
+/***
+ * Brynn Harrington
+ * CS 341A 
+ * Dr. Tribelhorn
+ * Homework #2
+
+ * This CSS file acts as a style sheet for a cheesecake order form website 
+ * to increase the aesthetic of the website.
+ *
+ * NOTES
+ * learned the CSS from the following website/tutorial: 
+ *  https://www.w3schools.com/css/default.asp
+ * learned the select bar from:
+ *
+ ***/
+
+/**
+ * Apply the background color of the entire document 
+ */
+*{
+    background-color: rgb(228, 181, 181);
+}
+/**
+ * Modify the body tag 
+ */
+body {
+    /* Change the font style to trebuchet MS */
+    font-family: 'Trebuchet MS';
+}
+
+/**
+ * Modify the style of the h1 tag 
+ */
+h1 {
+    /* Modify the background color so some of the page has a different color*/
+    background-color: beige; 
+    /* Surround the text with a double border that fits the content */
+    border-style: double;
+    width: fit-content;
+    /* Change the font style to impact and increase the size */
+    font-family: Impact;
+    font-size: xx-large;
+}
+
+/**
+ * Modify the style of the h3 tag 
+ */
+h3 {
+    /* Change the font style to impact */
+    font-family: Impact;
+    /* Modify the background color so some of the page has a different color*/
+    background-color: beige; 
+    /* Surround the text with a double border that fits the content */
+    border-style: double;
+    width: fit-content;
+}
+
+/**
+ * Modify the style of the reviews class 
+ */
+.reviews {
+    /* Change the font style to impact */
+    font-family: Impact;
+    /* Modify the background color so some of the page has a different color*/
+    background-color: beige; 
+    /* Surround the text with a double border that fits the content */
+    border-style: double;
+    width: fit-content; 
+}
+
+/**
+ * Modify the style of the p tag 
+ */
+ p {
+    /* Change the font style to trebuchet MS */
+    font-family: 'Trebuchet MS';
+    /* Format the text box */
+    display: block;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+/**
+ * Modify the style of the textarea tag 
+ */
+textarea {
+    /* Modify the background color so some of the page has a different color*/
+    background-color: beige; 
+    /* Change the font style to trebuchet MS */
+    font-family: 'Trebuchet MS';
+    /* Change the cursor to text */
+    cursor: text;
+}
+
+/**
+ * Modify the style of the input tag 
+ */
+/* input { */
+    /* Modify the background color so some of the page has a different color*/
+    /* background-color: beige;  */
+    /* Change the font style to trebuchet MS */
+    /* font-family: 'Trebuchet MS';
+    font-weight: bold;
+    font-size: small;
+} */
+
+/**
+ * Modify the style of the li tag 
+ */
+li {
+    /* Change the font style to trebuchet MS */
+    font-family: 'Trebuchet MS';
+}
+
+/**
+ * Modify the style of the form tag 
+ */
+form {
+    /* Change the font style to trebuchet MS */
+    font-family: 'Trebuchet MS';
+}
+
+/**
+ * Modify the style of the form tag 
+ */
+ select { 
+    /* Change the font style to impact */
+    font-family: Impact;
+    font-size: medium;
+    /* Modify the background color so some of the page has a different color*/
+    background-color: beige; 
+    /* Surround the text with a double border that fits the content */
+    border-style: double;
+}
+
+/**
+ * Modify the style of the form tag 
+ */
+ strong { 
+    /* Change the font style to impact */
+    font-family: Impact;
+    font-size: medium;
+    /* Modify the background color so some of the page has a different color*/
+    background-color: beige; 
+    /* Surround the text with a double border that fits the content */
+    border-style: double;
+}
+
+/**
+ * Modify the style of the month drop down
+ */
+ .monthOptions{
+    position: absolute;
+    appearance: none;
+    background-color: beige;
+    width: auto;  
+}
