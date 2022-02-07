@@ -17,13 +17,8 @@
 /**
  * Apply the background color of the entire document 
  */
-*{
+* {
     background-color: rgb(228, 181, 181);
-}
-/**
- * Modify the body tag 
- */
-body {
     /* Change the font style to trebuchet MS */
     font-family: 'Trebuchet MS';
 }
@@ -33,7 +28,7 @@ body {
  */
 h1 {
     /* Modify the background color so some of the page has a different color*/
-    background-color: beige; 
+    background-color: beige;
     /* Surround the text with a double border that fits the content */
     border-style: double;
     width: fit-content;
@@ -49,7 +44,7 @@ h3 {
     /* Change the font style to impact */
     font-family: Impact;
     /* Modify the background color so some of the page has a different color*/
-    background-color: beige; 
+    background-color: beige;
     /* Surround the text with a double border that fits the content */
     border-style: double;
     width: fit-content;
@@ -62,32 +57,19 @@ h3 {
     /* Change the font style to impact */
     font-family: Impact;
     /* Modify the background color so some of the page has a different color*/
-    background-color: beige; 
+    background-color: beige;
     /* Surround the text with a double border that fits the content */
     border-style: double;
-    width: fit-content; 
+    width: fit-content;
 }
 
-/**
- * Modify the style of the p tag 
- */
- p {
-    /* Change the font style to trebuchet MS */
-    font-family: 'Trebuchet MS';
-    /* Format the text box */
-    display: block;
-    margin-top: 1em;
-    margin-bottom: 1em;
-    margin-left: 0;
-    margin-right: 0;
-}
 
 /**
  * Modify the style of the textarea tag 
  */
 textarea {
     /* Modify the background color so some of the page has a different color*/
-    background-color: beige; 
+    background-color: beige;
     /* Change the font style to trebuchet MS */
     font-family: 'Trebuchet MS';
     /* Change the cursor to text */
@@ -95,55 +77,14 @@ textarea {
 }
 
 /**
- * Modify the style of the input tag 
- */
-/* input { */
-    /* Modify the background color so some of the page has a different color*/
-    /* background-color: beige;  */
-    /* Change the font style to trebuchet MS */
-    /* font-family: 'Trebuchet MS';
-    font-weight: bold;
-    font-size: small;
-} */
-
-/**
- * Modify the style of the li tag 
- */
-li {
-    /* Change the font style to trebuchet MS */
-    font-family: 'Trebuchet MS';
-}
-
-/**
  * Modify the style of the form tag 
  */
-form {
-    /* Change the font style to trebuchet MS */
-    font-family: 'Trebuchet MS';
-}
-
-/**
- * Modify the style of the form tag 
- */
- select { 
+select {
     /* Change the font style to impact */
     font-family: Impact;
     font-size: medium;
     /* Modify the background color so some of the page has a different color*/
-    background-color: beige; 
-    /* Surround the text with a double border that fits the content */
-    border-style: double;
-}
-
-/**
- * Modify the style of the form tag 
- */
- strong { 
-    /* Change the font style to impact */
-    font-family: Impact;
-    font-size: medium;
-    /* Modify the background color so some of the page has a different color*/
-    background-color: beige; 
+    background-color: beige;
     /* Surround the text with a double border that fits the content */
     border-style: double;
 }
@@ -151,9 +92,68 @@ form {
 /**
  * Modify the style of the month drop down
  */
- .monthOptions{
-    position: absolute;
-    appearance: none;
+.monthDropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Modify the dropdown buttons for the month */
+.monthDrop {
+    /* Modify the background color so some of the page has a different color*/
     background-color: beige;
-    width: auto;  
+    /* Change the font style to impact */
+    font-family: Impact;
+    font-size: medium;
+}
+
+/* Modify the dropdown display */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 80px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+
+.dropdown-content button {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content {
+    max-height: 200px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+.dropdown-content button:hover {
+    background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: #3e8e41;
+}
+
+ul {
+    list-style-type: circle;
+}
+
+submit {
+    background-color: #4CAF50;
+    /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
 }

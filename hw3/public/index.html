@@ -59,9 +59,8 @@
             <!-- The next row holds the quantity options and topping options -->
             <tr> 
                 <td>
-                    <!-- Radio button for quantity with options from 1 to 10 -->
-                    <form>
-                        <label for="quantity" </label>
+                    <!-- Radio button for quantity with options from 1 to 10 with action-->
+                    <form id="quantity" action="/action_page.php">
                             <select name="quantity" id="quantity">
                                 <option> 1  </option>
                                 <option> 2  </option>
@@ -74,6 +73,7 @@
                                 <option> 9  </option>
                                 <option> 10 </option>
                             </select>
+                            <br>
                     </form>
                 </td>
     
@@ -81,29 +81,17 @@
                 <td>
                     <form>
                         <!-- Plain displayed with its label and a break after -->
-                        <input 
-                            type="radio" 
-                            id="topping" 
-                            name="top"
-                            value="Plain">
+                        <input type="radio" id="topping" name="topping" value="plain">
                         <label for="plain"> Plain </label>
                         <br>
 
                         <!-- Cherry displayed with its label and a break after -->
-                        <input 
-                            type="radio" 
-                            id="topping" 
-                            name="top"
-                            value="Cherry">
+                        <input type="radio" id="topping" name="topping" value="cherry">
                         <label for="cherry"> Cherry </label>
                         <br>
 
                         <!-- Chocolate displayed with its label -->
-                        <input 
-                            type="radio" 
-                            id="topping" 
-                            name="top"
-                            value="Chocolate">
+                        <input type="radio" id="topping" name="topping" value="chocolate">
                         <label for="chocolate"> Chocolate </label>
                     </form>
                 </td>
@@ -113,43 +101,40 @@
 
 
         <!-- Paragraph text for the notes (break the paragraph)-->
-        <h3 id="forms">Notes:<br>
+        <label id="notes" for="notes"><h3>Notes:</h3></label>
             <!-- Text area for the special instruction information -->
             <textarea 
                 id="notes"
+                name="notes"
                 placeholder="Enter any special instructions here."
                 rows="4" 
                 cols="45">
             </textarea>
 
-             <!-- Button to order -->
-            <input 
-            type="button"
-            id="order" 
-            value="Order"/>
-        </h3>
+             <!-- Button to order -->'
+            <form id="order" action="">
+                <input type="submit" value="Order" />
+            </form>
+            <br><br>
+            
 
-        <!-- Header (smaller so h3) text for total orders -->
-            <div style="display: inline-block;">
-                <strong>Total Orders Last</strong>
-                <!-- Create options for the months with a drop down menu -->
-                <select 
-                    id="monthOptions" 
-                    onmouseover="monthDropDown()" 
-                    onmouseout="this.size = 0.5;">
-                    <option value="Jan" class="month">Jan</option>
-                    <option value="Feb" class="month">Feb</option>
-                    <option value="Mar" class="month">Mar</option>
-                    <option value="Apr" class="month">Apr</option>
-                    <option value="Jun" class="month">Jun</option>
-                    <option value="Jul" class="month">Jul</option>
-                    <option value="Aug" class="month">Aug</option>
-                    <option value="Sep" class="month">Sep</option>
-                    <option value="Oct" class="month">Oct</option>
-                    <option value="Nov" class="month">Nov</option>
-                    <option value="Dec" class="month">Dec</option>
-                </select>
+        <h3>Total Orders Last
+            <div class="monthDropdown">
+                <button id="month" class="monthDrop">Jan</button>
+                <div class="dropdown-content">
+                    <button id="Feb" class="dropdown-content">Feb</button>
+                    <button id="Mar" class="dropdown-content">Mar</button>
+                    <button id="Apr" class="dropdown-content">Apr</button>
+                    <button id="Jun" class="dropdown-content">Jun</button>
+                    <button id="Jul" class="dropdown-content">Jul</button>
+                    <button id="Aug" class="dropdown-content">Aug</button>
+                    <button id="Sep" class="dropdown-content">Sep</button>
+                    <button id="Oct" class="dropdown-content">Oct</button>
+                    <button id="Nov" class="dropdown-content">Nov</button>
+                    <button id="Dec" class="dropdown-content">Dec</button>
+                </div>
             </div>
+        </h3>
  
         <!-- List of last month's orders -->
         <ul id="orderList">
