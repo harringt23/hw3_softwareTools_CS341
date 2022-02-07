@@ -50,18 +50,7 @@ h3 {
     width: fit-content;
 }
 
-/**
- * Modify the style of the reviews class 
- */
-.reviews {
-    /* Change the font style to impact */
-    font-family: Impact;
-    /* Modify the background color so some of the page has a different color*/
-    background-color: beige;
-    /* Surround the text with a double border that fits the content */
-    border-style: double;
-    width: fit-content;
-}
+
 
 
 /**
@@ -76,6 +65,7 @@ textarea {
     cursor: text;
 }
 
+
 /**
  * Modify the style of the form tag 
  */
@@ -89,71 +79,56 @@ select {
     border-style: double;
 }
 
-/**
- * Modify the style of the month drop down
- */
-.monthDropdown {
+
+/* Modify the monthDrop buttons for the month */
+.monthDB {
+    background-color: #4CAF50;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+  }
+  
+  .monthDrop {
     position: relative;
     display: inline-block;
-}
-
-/* Modify the dropdown buttons for the month */
-.monthDrop {
-    /* Modify the background color so some of the page has a different color*/
-    background-color: beige;
-    /* Change the font style to impact */
-    font-family: Impact;
-    font-size: medium;
-}
-
-/* Modify the dropdown display */
-.dropdown-content {
+  }
+  
+  .monthDrop-content {
     display: none;
     position: absolute;
     background-color: #f1f1f1;
     min-width: 80px;
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
-}
-
-
-.dropdown-content button {
+  }
+  
+  .monthDrop-content button {
     color: black;
     padding: 12px 16px;
     text-decoration: none;
     display: block;
-}
+  }
+  
+  .monthDrop-content {
+    max-height:200px;
+    overflow-x:hidden;
+    overflow-y:scroll;
+  }
+  
+  .monthDrop-content button:hover {background-color: #ddd;}
+  .monthDrop:hover .monthDrop-content {display: block;}
+  .monthDrop:hover .monthDB {background-color: beige;}
 
-.dropdown-content {
-    max-height: 200px;
-    overflow-x: hidden;
-    overflow-y: scroll;
-}
-
-.dropdown-content button:hover {
-    background-color: #ddd;
-}
-
-.dropdown:hover .dropdown-content {
-    display: block;
-}
-
-.dropdown:hover .dropbtn {
-    background-color: #3e8e41;
-}
-
-ul {
-    list-style-type: circle;
-}
-
-submit {
-    background-color: #4CAF50;
-    /* Green */
-    border: none;
-    color: white;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
+  /**
+ * Modify the style of the reviews class 
+ */
+.reviews {
+    /* Change the font style to impact */
+    font-family: Impact;
+    /* Modify the background color so some of the page has a different color*/
+    background-color: beige;
+    /* Surround the text with a double border that fits the content */
+    border-style: double;
+    width: fit-content;
 }
