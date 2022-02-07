@@ -2,7 +2,9 @@
  * Brynn Harrington 
  *
  * This unit test verifies the correct 
- * functionality of the orders route
+ * functionality of the orders route 
+ * 
+ * STATUS: PASSED
  */
 var fs = require('fs');
 const { hasUncaughtExceptionCaptureCallback } = require('process');
