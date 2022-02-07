@@ -6,8 +6,8 @@ var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-// added new router to respond to orders
-// var ordersRouter = require('./routes/orders');
+// added new router to respond to orders at the address: http://localhost:3000/orders
+var ordersRouter = require('./routes/orders');
 
 var app = express();
 
@@ -24,8 +24,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 
-// respond the local host address
-// app.use('/orders', ordersRouter);
+// respond the local host address (http://localhost:3000/orders)
+app.use('/orders', ordersRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
