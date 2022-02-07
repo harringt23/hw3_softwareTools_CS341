@@ -1,0 +1,208 @@
+<!-- 
+    Brynn Harrington
+    CS 341A 
+    Dr. Tribelhorn
+    Homework #3
+
+    This HTML file displays a cheesecake order form website and utilized CSS 
+    to increase the aesthetic of the website. From the last homework, JavaSrcipt 
+
+    NOTES
+    - a tiny url was utilized to shorten the length of the link so the 
+    code is cleaner
+    - all <br> tags are for breaks in the code
+    - learned how to code in HTML and link CSS file from:
+    https://www.w3schools.com/html/default.asp 
+    - found the vertical scroll bar HTML at:
+    https://tutorialdeep.com/knowhow/open-dropdown-hover-jquery-js/ 
+    ADDITIONS 
+    - used the emoji character for cheesecake (UTF-8 version)
+        SOURCE: https://www.w3schools.com/html/html_emojis.asp 
+    - added a success message after clicking the order button
+    - added "real" customer reviews of the cheesecake
+    -
+
+-->
+<!DOCTYPE html>
+<html>
+    <!-- Head -->
+    <head> 
+        <!-- Import the CSS cheesecake stylesheet -->
+        <link rel="stylesheet" href="stylesheets/cheesecake_style.css"> 
+        <!-- Load in the jQuery library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"/> </script>
+        <!-- Load in the functions from the kavascript file -->
+	<script src="javascripts/cheesecake_functions"></script>
+    </head>
+  
+    <!-- Body -->
+    <body>
+        <!-- Display the title "Cheesecake Order Form" with emoji-->
+        <h1>Cheesecake Order Form</h1>  
+	<h1><&#127856</h1>	
+
+        <!-- Display the cheesecake image. -->
+        <img 
+            src="https://tinyurl.com/2p86xjnp" 
+            alt="wikimedia cheesecake" 
+            width="185" 
+            height="180"/>
+
+        <!-- Table to organize the quantity and topping selections -->
+        <table id="forms">
+            <!-- Paragraph text for the quantity and toppings in first row -->
+            <tr>
+                <td><h3>Quantity</h3></td>
+                <td><h3>Topping</h3></td>    
+            </tr>
+            
+            <!-- The next row holds the quantity options and topping options -->
+            <tr> 
+                <td>
+                    <!-- Radio button for quantity with options from 1 to 10 -->
+                    <form>
+                        <label for="quantity" </label>
+                            <select name="quantity" id="quantity">
+                                <option> 1  </option>
+                                <option> 2  </option>
+                                <option> 3  </option>
+                                <option> 4  </option>
+                                <option> 5  </option>
+                                <option> 6  </option>
+                                <option> 7  </option>
+                                <option> 8  </option>
+                                <option> 9  </option>
+                                <option> 10 </option>
+                            </select>
+                    </form>
+                </td>
+    
+                <!-- Radio button for topping -->
+                <td>
+                    <form>
+                        <!-- Plain displayed with its label and a break after -->
+                        <input 
+                            type="radio" 
+                            id="topping" 
+                            name="top"
+                            value="Plain">
+                        <label for="plain"> Plain </label>
+                        <br>
+
+                        <!-- Cherry displayed with its label and a break after -->
+                        <input 
+                            type="radio" 
+                            id="topping" 
+                            name="top"
+                            value="Cherry">
+                        <label for="cherry"> Cherry </label>
+                        <br>
+
+                        <!-- Chocolate displayed with its label -->
+                        <input 
+                            type="radio" 
+                            id="topping" 
+                            name="top"
+                            value="Chocolate">
+                        <label for="chocolate"> Chocolate </label>
+                    </form>
+                </td>
+            </tr>
+        </table>
+        <br>
+
+
+        <!-- Paragraph text for the notes (break the paragraph)-->
+        <h3 id="forms">Notes:<br>
+            <!-- Text area for the special instruction information -->
+            <textarea 
+                id="notes"
+                placeholder="Enter any special instructions here."
+                rows="4" 
+                cols="45">
+            </textarea>
+
+             <!-- Button to order -->
+            <input 
+            type="button"
+            id="order" 
+            value="Order"/>
+        </h3>
+
+        <!-- Header (smaller so h3) text for total orders -->
+            <div style="display: inline-block;">
+                <strong>Total Orders Last</strong>
+                <!-- Create options for the months with a drop down menu -->
+                <select 
+                    id="monthOptions" 
+                    onmouseover="monthDropDown()" 
+                    onmouseout="this.size = 0.5;">
+                    <option value="Jan" class="month">Jan</option>
+                    <option value="Feb" class="month">Feb</option>
+                    <option value="Mar" class="month">Mar</option>
+                    <option value="Apr" class="month">Apr</option>
+                    <option value="Jun" class="month">Jun</option>
+                    <option value="Jul" class="month">Jul</option>
+                    <option value="Aug" class="month">Aug</option>
+                    <option value="Sep" class="month">Sep</option>
+                    <option value="Oct" class="month">Oct</option>
+                    <option value="Nov" class="month">Nov</option>
+                    <option value="Dec" class="month">Dec</option>
+                </select>
+            </div>
+ 
+        <!-- List of last month's orders -->
+        <ul>
+            <li>11 cherry</li>
+            <li>17 chocolate</li>
+            <li>31 plain</li>
+        </ul>
+        <br>
+
+        <!-- Header (smaller so h3) text for "customer feedback" -->
+        <h2 class="reviews">Customer Reviews</h2>    
+        <!-- Table to organize the reviews -->
+        <table> 
+            <tr>
+                <td>
+                    <!-- Gordon Ramsey -->
+                    <img 
+                    src="https://tinyurl.com/yckn6jxc" 
+                    name="feedbackR" 
+                    width="300" 
+                    height="180">
+                    <p> - Gordon Ramsey </p>
+                </td>
+                <td>
+                    <!-- Shaquille O'Neal -->
+                    <img 
+                    src="https://tinyurl.com/2p85s3yv" 
+                    name="feedbackS" 
+                    width="200" 
+                    height="180">
+                    <p> - Shaquille O'Neal </p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                <!-- Tina Fey -->
+                <img 
+                    src="https://tinyurl.com/y4mzmbzd" 
+                    name="feedbackS" 
+                    width="300" 
+                    height="180">
+                <p> - Tina Fey </p>
+                </td>
+                <td>
+                    <!-- Jim Carrey -->
+                    <img 
+                    src="https://tinyurl.com/23ddn7cc" 
+                    name="feedbackS" 
+                    width="250" 
+                    height="180">
+                    <p> - Jim Carrey </p>
+                </td>
+            </tr>
+        </table>
+    </body>
+</html>
