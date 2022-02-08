@@ -1,3 +1,11 @@
+/* Test for the new "Cheesecake Order Form" title
+ * Brynn Harrington 
+ *
+ * This unit test verifies the correct 
+ * functionality of the title 
+ * 
+ * STATUS: PASSED
+ */
 var fs = require('fs'); 
 
 test('test selectEvent', () => {
@@ -9,5 +17,5 @@ test('test selectEvent', () => {
 	//put the HTML into a testing DOM and do a sanity check 
 	document.body.innerHTML = html;
 	const $ = require('jquery'); 
-	expect($('h1').html()).toBe("Cheesecake Order Form");
+	expect($('title').html()).toBe("Cheesecake Order Form");
 });

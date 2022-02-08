@@ -12,8 +12,9 @@
  *
  ***/
 
-// handler to help with the tasks needed to use the submit event
+/* handler to help with the tasks needed to use the submit event */
 submitHandler = function (e) {
+    // extract
     var notesText = document.getElementById('notes').value;
     var veg = 'vegan';
 
@@ -69,33 +70,5 @@ $(document).ready(function () {
     $("form").on("submit", submitHandler);
 
     // call month handler on selected month
-    // var buttonText = $(this).text();
-    // $("#month").html(buttonText);
-
-    // $(".monthClick").click(function () {
-    //     let month = $(this).text();
-    //     $(".monthDropdown").text(month);
-    //     $.post('http://localhost:3000/orders', month, function (data) {
-    //         // update orders page to match returned object 
-    //         $('#cherryOrders').text(data[0].quantity + " " + data[0].topping);
-    //         $('#plainOrders').text(data[1].quantity + " " + data[1].topping);
-    //         $('#chocolateOrders').text(data[2].quantity + " " + data[2].topping);
-    //     });
-    // });
-
-    // alert("success");
-    // let month = $(this).text();
-    // $(".monthDropdown").text(month);
     $("#month").click(monthHandler);
-    // // $("#feb").click(monthHandler);
-    // $("#mar").click(monthHandler);
-    // $("#apr").click(monthHandler);
-    // $("#may").click(monthHandler);
-    // $("#jun").click(monthHandler);
-    // $("#jul").click(monthHandler);
-    // $("#aug").click(monthHandler);
-    // $("#sep").click(monthHandler);
-    // $("#oct").click(monthHandler);
-    // $("#nov").click(monthHandler);
-    // $("#dec").click(monthHandler);
 });
