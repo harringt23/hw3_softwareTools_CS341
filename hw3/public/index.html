@@ -44,7 +44,7 @@
     <img src="https://tinyurl.com/2p86xjnp" alt="wikimedia cheesecake" width="185" height="180" />
 
     <!-- Table to organize the quantity and topping selections -->
-    <table id="forms">
+    <table id="table">
         <!-- Paragraph text for the quantity and toppings in first row -->
         <tr>
             <td> <h3>Quantity</h3> </td>
@@ -55,7 +55,7 @@
         <tr>
             <td>
                 <!-- Radio button for quantity with options from 1 to 10 with action-->
-                <form id="quantity" action="/.php">
+                <form id="quantity" action="/action_page.php">
                     <select name="quantity" id="quantity">
                         <option> 1 </option>
                         <option> 2 </option>
@@ -68,27 +68,19 @@
                         <option> 9 </option>
                         <option> 10 </option>
                     </select>
-                    <br>
+                    <br><br>
                 </form>
             </td>
 
             <!-- Radio button for topping -->
             <td>
-                <form>
-                    <!-- Plain displayed with its label and a break after -->
-                    <input type="radio" id="topping" name="topping" value="plain">
-                    <label for="plain"> Plain </label>
-                    <br>
-
-                    <!-- Cherry displayed with its label and a break after -->
-                    <input type="radio" id="topping" name="topping" value="cherry">
-                    <label for="cherry"> Cherry </label>
-                    <br>
-
-                    <!-- Chocolate displayed with its label -->
-                    <input type="radio" id="topping" name="topping" value="chocolate">
-                    <label for="chocolate"> Chocolate </label>
-                </form>
+                <!-- Toppings displayed with its label and a break after -->
+                <input type="radio" id="plain" name="topping" value="plain">
+                <label for="plain"> Plain </label> <br>
+                <input type="radio" id="cherry" name="topping" value="cherry">
+                <label for="cherry"> Cherry </label><br>
+                <input type="radio" id="chocolate" name="topping" value="chocolate">
+                <label for="chocolate"> Chocolate </label>
             </td>
         </tr>
     </table>
@@ -96,11 +88,11 @@
 
 
     <!-- Paragraph text for the notes (break the paragraph)-->
-    <label id="notes" for="notes">
+    <label id="notesText" for="notes">
         <h3>Notes:</h3>
     </label>
     <!-- Text area for the special instruction information -->
-    <textarea id="notes" name="notes" placeholder="Enter any special instructions here." rows="4" cols="45">
+    <textarea id="notes" name="notes" value="" placeholder="Enter any special instructions here." rows="4" cols="45">
             </textarea>
 
     <!-- Button to order -->'
@@ -112,7 +104,7 @@
 
     <h3>Total Orders Last
         <div class="monthDrop">
-            <button id="Jan" class="monthDB">Jan</button>
+            <button id="month" class="monthDB">Jan</button>
             <div class="monthDrop-content">
                 <button id="Feb" class="monthDrop-content">Feb</button>
                 <button id="Mar" class="monthDrop-content">Mar</button>
