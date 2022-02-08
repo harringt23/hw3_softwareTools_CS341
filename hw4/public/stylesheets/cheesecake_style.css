@@ -22,7 +22,7 @@
     font-family: 'Trebuchet MS';
 }
 
-h1, h3, select, button, .monthDropButton, .quantity, .order {
+h1, h3, select, button, .monthDropButton, .quantity, .order, .reviews{
     /* Modify the background color so some of the page has a different color*/
     background-color: beige;
     /* Surround the text with a double border that fits the content */
