@@ -22,7 +22,7 @@ submitHandler = function (e) {
         alert("Warning, these cheesecakes contain dairy. Do you still want to order?"); // alerts if word is found
     }
     // otherwise submit the entries and hide the elements no longer needing to be used
-    else { 
+    else {
         $("#table").hide();
         $("#notes").hide();
         $("#specialInstruct").hide();
@@ -38,16 +38,10 @@ submitHandler = function (e) {
 
         // alert the users of what they ordered
         alert("Thank you! Your order has been placed. Here are the details:"
-		+ "\nQuantity: " + quantity 
-		+ "\nTopping: " + topping
-		+ "\nNotes: " + specialInstructions);
+            + "\nQuantity: " + quantity
+            + "\nTopping: " + topping
+            + "\nNotes: " + specialInstructions);
 
-        $.post("https://localhost:3000/neworders",
-            {
-                quantity: $("quantity :selected").val(),
-                topping: $("input[name='topping']:checked").val(),
-                notes: $("#notes").val(),
-            });
         $("body").append(thankyou, toppingsAlert, quantityAlert, notesAlert);
     }
     e.preventDefault();
@@ -55,20 +49,15 @@ submitHandler = function (e) {
 
 // handler for each month
 monthHandler = function () {
-    var buttonText = $(this).text();
-    $("#month").html(buttonText);
-    $.post('/orders',
-        {
-            month: buttonText,
-        },
-        function (orderArray) {
-            var newOrderList0 = orderArray.data[0].quantity + " " + orderArray.data[0].topping;
-            var newOrderList1 = orderArray.data[1].quantity + " " + orderArray.data[1].topping;
-            var newOrderList2 = orderArray.data[2].quantity + " " + orderArray.data[2].topping;
-            $("#orderListCherry").html(newOrderList0);
-            $("#orderListChocolate").html(newOrderList1);
-            $("#orderListPlain").html(newOrderList2);
-        });
+    let month = $(this).text();
+    $(".monthDropdown").text(month);
+
+    $.post('http://localhost:3000/orders', month, function () {
+        $('#orderListCherry').text(data[0].quantity + " " + orderArray.data[0].topping);
+        $('#orderListPlain').text(data[1].quantity + " " + orderArray.data[1].topping);
+        $('#orderListChocolate').text(data[2].quantity + " " + orderArray.data[2].topping);
+    });
+    alert("success");
 }
 
 // read in and handle the events from the main document
@@ -77,16 +66,30 @@ $(document).ready(function () {
     $("form").on("submit", submitHandler);
 
     // call month handler on selected month
-    $("#jan").click(monthHandler);
-    $("#feb").click(monthHandler);
-    $("#mar").click(monthHandler);
-    $("#apr").click(monthHandler);
-    $("#may").click(monthHandler);
-    $("#jun").click(monthHandler);
-    $("#jul").click(monthHandler);
-    $("#aug").click(monthHandler);
-    $("#sep").click(monthHandler);
-    $("#oct").click(monthHandler);
-    $("#nov").click(monthHandler);
-    $("#dec").click(monthHandler);
+    // var buttonText = $(this).text();
+    // $("#month").html(buttonText);
+    
+    $(month).click(function() {
+        $.post('http://localhost:3000/orders', month, function (data) {
+            $('#orderListCherry').text(data[0].quantity + " " + orderArray.data[0].topping);
+            $('#orderListPlain').text(data[1].quantity + " " + orderArray.data[1].topping);
+            $('#orderListChocolate').text(data[2].quantity + " " + orderArray.data[2].topping);
+        });
+    });
+   
+    // alert("success");
+    // let month = $(this).text();
+    // $(".monthDropdown").text(month);
+    // $(month).click(monthHandler);
+    // // $("#feb").click(monthHandler);
+    // $("#mar").click(monthHandler);
+    // $("#apr").click(monthHandler);
+    // $("#may").click(monthHandler);
+    // $("#jun").click(monthHandler);
+    // $("#jul").click(monthHandler);
+    // $("#aug").click(monthHandler);
+    // $("#sep").click(monthHandler);
+    // $("#oct").click(monthHandler);
+    // $("#nov").click(monthHandler);
+    // $("#dec").click(monthHandler);
 });

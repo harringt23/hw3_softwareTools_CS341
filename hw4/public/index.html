@@ -5,7 +5,7 @@
     Homework #4
 
     This HTML file displays a cheesecake order form website and utilized CSS 
-    to increase the aesthetic of the website. From the last homework, JavaSrcipt 
+    to increase the aesthetic of the website. From the last homework, JavaScript 
 
     NOTES
     - a tiny url was utilized to shorten the length of the link so the 
@@ -21,6 +21,7 @@
 <!DOCTYPE html>
 <html>
 <!-- Head -->
+
 <head>
   <!-- Import the jQuery library, javascript and stylesheet files -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" />
@@ -30,6 +31,7 @@
 </head>
 
 <!-- Body -->
+
 <body>
   <!-- Display the title "Cheesecake Order Form" with emoji-->
   <h1>Cheesecake Order Form</h1>
@@ -40,32 +42,36 @@
   <table id="table">
     <!-- Text for the quantity and toppings in first row -->
     <tr>
-      <td><h3>Quantity</h3></td>
-      <td><h3>Topping</h3></td>
+      <td>
+        <h3>Quantity</h3>
+      </td>
+      <td>
+        <h3>Topping</h3>
+      </td>
     </tr>
     <!-- The next row holds the quantity options and topping options -->
     <tr>
       <td>
-        <form id="quantity" action="/action_page.php">
-          <select name="quantity" id="quantity" class="quantity">
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-            <option value="6">6</option>
-            <option value="7">7</option>
-            <option value="8">8</option>
-            <option value="9">9</option>
-            <option value="10">10</option>
+        <form id="quantity"">
+          <select name=" quantity" id="quantity" class="quantity">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+          <option value="9">9</option>
+          <option value="10">10</option>
           </select>
           <br><br>
         </form>
       </td>
 
-<!-- Radio button for topping -->
+      <!-- Radio button for topping -->
       <td>
-        <!-- Toppings displayed with its label and a break after -->        
+        <!-- Toppings displayed with its label and a break after -->
         <input type="radio" id="plain" name="topping" value="plain" required>
         <label for="plain">Plain</label><br>
         <input type="radio" id="cherry" name="topping" value="cherry">
@@ -76,17 +82,13 @@
     </tr>
   </table>
 
-      <!-- Text for the notes (break the paragraph)-->
-  <label id="specialInstruct" for="notes"><h3>Notes:</h3></label>
+  <!-- Text for the notes (break the paragraph)-->
+  <label id="specialInstruct" for="notes">
+    <h3>Notes:</h3>
+  </label>
   <br>
-      <!-- Text area for the special instruction information -->
-  <textarea 
-    id="notes" 
-    name="notes" 
-    rows="4" 
-    cols="50" 
-    value="" 
-    placeholder="Enter any special instructions here.">
+  <!-- Text area for the special instruction information -->
+  <textarea id="notes" name="notes" rows="4" cols="50" value="" placeholder="Enter any special instructions here.">
 </textarea>
   <br><br>
 
@@ -95,7 +97,7 @@
   <form id="order" action="">
     <input type="submit" class="order" value="Order">
   </form>
-  <h3 id="ty" hidden>Thank you! Your order has been placed</h3>
+  <!-- <h3 id="ty" hidden>Thank you! Your order has been placed</h3> -->
 
   <!-- Total orders for the past month-->
   <h3>Orders for
@@ -118,10 +120,10 @@
     </div>
   </h3>
 
-  <ul id="orderList">
-    <li id="orderListCherry">11 cherry</li>
-    <li id="orderListChocolate">17 chocolate</li>
-    <li id="orderListPlain">31 plain</li>
+  <ul>
+    <li id="cherryOrders">11 cherry</li>
+    <li id="chocolateOrders">17 chocolate</li>
+    <li id="plainOrders">31 plain</li>
   </ul>
 
 </body>
