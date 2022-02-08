@@ -9,8 +9,6 @@ var express = require('express');
 var router = express.Router();
 
 router.post('/', function (req, res, next) {
-    // verify entered
-    console.log('called');
 
     // array of JSON objects for cheesecake toppings and quantity
     var data = [{
@@ -29,7 +27,7 @@ router.post('/', function (req, res, next) {
 
     // set headers for the responses
     res.setHeader('Content-Type', 'application/json; charset=utf-8');
-
+    
     // send the responses
     res.send(stringData);
 });

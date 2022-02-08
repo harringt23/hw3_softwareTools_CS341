@@ -48,17 +48,17 @@ submitHandler = function (e) {
 }
 
 // handler for each month
-monthHandler = function () {
-    let month = $(this).text();
-    $(".monthDropdown").text(month);
+// monthHandler = function () {
+//     let month = $(this).text();
+//     $(".monthDropdown").text(month);
 
-    $.post('http://localhost:3000/orders', month, function () {
-        $('#orderListCherry').text(data[0].quantity + " " + orderArray.data[0].topping);
-        $('#orderListPlain').text(data[1].quantity + " " + orderArray.data[1].topping);
-        $('#orderListChocolate').text(data[2].quantity + " " + orderArray.data[2].topping);
-    });
-    alert("success");
-}
+//     $.post('http://localhost:3000/orders', month, function () {
+//         $('#orderListCherry').text(data[0].quantity + " " + orderArray.data[0].topping);
+//         $('#orderListPlain').text(data[1].quantity + " " + orderArray.data[1].topping);
+//         $('#orderListChocolate').text(data[2].quantity + " " + orderArray.data[2].topping);
+//     });
+//     alert("success");
+// }
 
 // read in and handle the events from the main document
 $(document).ready(function () {
@@ -68,15 +68,18 @@ $(document).ready(function () {
     // call month handler on selected month
     // var buttonText = $(this).text();
     // $("#month").html(buttonText);
-    
-    $(month).click(function() {
+
+    $(".monthClick").click(function () {
+        let month = $(this).text();
+        $(".monthDropdown").text(month);
         $.post('http://localhost:3000/orders', month, function (data) {
-            $('#orderListCherry').text(data[0].quantity + " " + orderArray.data[0].topping);
-            $('#orderListPlain').text(data[1].quantity + " " + orderArray.data[1].topping);
-            $('#orderListChocolate').text(data[2].quantity + " " + orderArray.data[2].topping);
+            // update orders page to match returned object 
+            $('#cherryOrders').text(data[0].quantity + " " + data[0].topping);
+            $('#plainOrders').text(data[1].quantity + " " + data[1].topping);
+            $('#chocolateOrders').text(data[2].quantity + " " + data[2].topping);
         });
     });
-   
+
     // alert("success");
     // let month = $(this).text();
     // $(".monthDropdown").text(month);
