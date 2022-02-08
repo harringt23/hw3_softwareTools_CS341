@@ -14,18 +14,18 @@
 
 // handler to help with the tasks needed to use the submit event
 submitHandler = function (e) {
-    var specialInstructions = document.getElementById('notes').value;
+    var notesText = document.getElementById('notes').value;
     var veg = 'vegan';
 
     // checking to see if notes contain the word "vegan"
-    if (specialInstructions.indexOf(veg) != -1) {
+    if (notesText.indexOf(veg) != -1) {
         alert("Warning, these cheesecakes contain dairy. Do you still want to order?"); // alerts if word is found
     }
     // otherwise submit the entries and hide the elements no longer needing to be used
     else {
         $("#table").hide();
         $("#notes").hide();
-        $("#specialInstruct").hide();
+        $("#notesText").hide();
         $("#order").hide();
 
         var topping = $("input[name='topping']:checked").val();
@@ -34,13 +34,13 @@ submitHandler = function (e) {
 
         var toppingsAlert = "<p>Topping: " + topping + "</p>"
         var quantityAlert = "<p>Quantity: " + quantity + "</p>"
-        var notesAlert = "<p>Notes: " + specialInstructions + "</p>"
+        var notesAlert = "<p>Notes: " + notesText + "</p>"
 
         // alert the users of what they ordered
         alert("Thank you! Your order has been placed. Here are the details:"
             + "\nQuantity: " + quantity
             + "\nTopping: " + topping
-            + "\nNotes: " + specialInstructions);
+            + "\nNotes: " + notesText);
 
         $("body").append(thankyou, toppingsAlert, quantityAlert, notesAlert);
     }
@@ -48,17 +48,26 @@ submitHandler = function (e) {
 }
 
 // handler for each month
-// monthHandler = function () {
-//     let month = $(this).text();
-//     $(".monthDropdown").text(month);
+monthHandler = function () {
+    var monthText = $(this).text();
+    $("#monthText").html(monthText);
 
-//     $.post('http://localhost:3000/orders', month, function () {
-//         $('#orderListCherry').text(data[0].quantity + " " + orderArray.data[0].topping);
-//         $('#orderListPlain').text(data[1].quantity + " " + orderArray.data[1].topping);
-//         $('#orderListChocolate').text(data[2].quantity + " " + orderArray.data[2].topping);
-//     });
-//     alert("success");
-// }
+    // $.post('http://localhost:3000/orders', monthText, function () {
+    //     $('#orderListCherry').text(data[0].quantity + " " + orderArray.data[0].topping);
+    //     $('#orderListPlain').text(data[1].quantity + " " + orderArray.data[1].topping);
+    //     $('#orderListChocolate').text(data[2].quantity + " " + orderArray.data[2].topping);
+    // });
+    $.post('\orders', function(orderArray) {
+        $("#cherryOrders").hide();
+        $("#chocolateOrders").hide();
+        $("#orderList2").hide();
+        var newCherryOrders = "<li>" + orderArray.data[0].cher.quantity + " " + orderArray.data[0].cher.topping + "</li>";
+        var newChocolateOrders = "<li>" + orderArray.data[1].choc.quantity + " " + orderArray.data[1].choc.topping + "</li>";
+        var newPlainOrders = "<li>" + orderArray.data[2].pla.quantity + " " + orderArray.data[2].pla.topping + "</li>";
+        $("#orderList").append(newCherryOrders, newChocolateOrders, newPlainOrders);
+    });
+    alert("success"); // TESTING
+}
 
 // read in and handle the events from the main document
 $(document).ready(function () {

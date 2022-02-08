@@ -28,12 +28,13 @@
   </script>
   <script src="javascripts/cheesecake_functions.js"></script>
   <link rel="stylesheet" href="stylesheets/cheesecake_style.css">
+  <!-- Display the title "Cheesecake Order Form"-->
+  <title>Cheesecake Order Form</title>
 </head>
 
 <!-- Body -->
-
 <body>
-  <!-- Display the title "Cheesecake Order Form" with emoji-->
+  <!-- Display the title "Cheesecake Order Form"-->
   <h1>Cheesecake Order Form</h1>
 
   <!-- Display the cheesecake image. -->
@@ -53,7 +54,7 @@
     <tr>
       <td>
         <form id="quantity"">
-          <select name=" quantity" id="quantity" class="quantity">
+          <select name=" quantity" id="quantity">
           <option value="1">1</option>
           <option value="2">2</option>
           <option value="3">3</option>
@@ -83,7 +84,7 @@
   </table>
 
   <!-- Text for the notes (break the paragraph)-->
-  <label id="specialInstruct" for="notes">
+  <label id="notesText" for="notes">
     <h3>Notes:</h3>
   </label>
   <br>
@@ -120,7 +121,7 @@
     </div>
   </h3>
 
-  <ul>
+  <ul id="orderList">
     <li id="cherryOrders">11 cherry</li>
     <li id="chocolateOrders">17 chocolate</li>
     <li id="plainOrders">31 plain</li>

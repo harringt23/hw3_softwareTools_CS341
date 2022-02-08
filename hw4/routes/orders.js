@@ -4,32 +4,23 @@
     Homework #4
     Used: https://www.w3schools.com/js/js_json_intro.asp
 */
-// from users.js
+
 var express = require('express');
 var router = express.Router();
+var orderArray = 
+    {"data" : [
+        {"cher" : {"topping" : "cherry", "quantity" : 2}},
+        {"choc" : {"topping" : "plain", "quantity" : 6}},
+        {"pla" : {"topping" : "chocolate", "quantity" : 3}},
+    ]};
 
-router.post('/', function (req, res, next) {
+/* GET orders listing. */
+router.get('/', function(req, res, next) {
+    res.json(orderArray);
+});
 
-    // array of JSON objects for cheesecake toppings and quantity
-    var data = [{
-        topping: "cherry",
-        quantity: "2"
-    }, {
-        topping: "plain",
-        quantity: "6"
-    }, {
-        topping: "chocolate",
-        quantity: "3"
-    }];
-
-    // convert data array to a string
-    var stringData = JSON.stringify(data);
-
-    // set headers for the responses
-    res.setHeader('Content-Type', 'application/json; charset=utf-8');
-    
-    // send the responses
-    res.send(stringData);
+router.post('/', function(req, res, next) {
+    res.json(orderArray);
 });
 
 module.exports = router;
