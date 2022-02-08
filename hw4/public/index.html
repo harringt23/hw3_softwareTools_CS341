@@ -1,0 +1,131 @@
+<!-- Braeden Lane -->
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"/></script>
+<script src="javascripts/doc.js"></script>
+<link rel="stylesheet" href="stylesheets/laneb22.css">
+<title>Cheesecake Order Form</title>
+<style>
+.dropbtn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 80px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content button {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content {
+  max-height:200px;
+  overflow-x:hidden;
+  overflow-y:scroll;
+}
+
+.dropdown-content button:hover {background-color: #ddd;}
+
+.dropdown:hover .dropdown-content {display: block;}
+
+.dropdown:hover .dropbtn {background-color: #3e8e41;}
+</style>
+</head>
+<body>
+
+<h1>Cheesecake Order Form</h1>
+
+<img src="https://upload.wikimedia.org/wikipedia/commons/9/9c/Mondays_at_Il_Forno_-_Cheesecake_with_strawberry_sauce.jpg" alt="wikimediacheesecake" style="width:150px;height:150px;">
+
+<table id="table" style="width:160px">
+  <tr>
+    <td>Quantity</td>
+    <td>Topping</td>
+  </tr>
+  <tr>
+    <td>
+    	<form id="quantity" action="/action_page.php">
+  			<select name="quantity" id="quantity">
+    		<option value="1">1</option>
+    		<option value="2">2</option>
+    		<option value="3">3</option>
+    		<option value="4">4</option>
+  			</select>
+  			<br><br>
+		</form>
+    </td>
+    <td>
+    	<input type="radio" id="plain" name="topping" value="plain">
+		<label for="plain">Plain</label><br>
+		<input type="radio" id="cherry" name="topping" value="cherry">
+		<label for="cherry">Cherry</label><br>
+		<input type="radio" id="chocolate" name="topping" value="chocolate">
+		<label for="chocolate">Chocolate</label>
+    </td>
+  </tr>
+</table>
+
+<label id="notestext" for="notes">Notes:</label>
+<br>
+<textarea 
+id="notes" 
+name="notes" 
+rows="4" 
+cols="50" 
+value="" 
+placeholder="Enter any special instructions here.">
+</textarea>
+
+<br><br>
+<form id="order" action="">
+  <input type="submit" value="Order">
+</form>
+<h3 id="ty" hidden>Thank you! Your order has been placed</h3>
+
+<!-- Code starter from w3schools.com-->
+<h3>Orders for 
+  <div class="dropdown">
+    <button id="month" class="dropbtn">Jan</button>
+    <div class="dropdown-content">
+      <button id="jan">Jan</button>
+      <button id="feb">Feb</button>
+      <button id="mar">Mar</button>
+      <button id="apr">Apr</button>
+      <button id="may">May</button>
+      <button id="jun">Jun</button>
+      <button id="jul">Jul</button>
+      <button id="aug">Aug</button>
+      <button id="sep">Sep</button>
+      <button id="oct">Oct</button>
+      <button id="nov">Nov</button>
+      <button id="dec">Dec</button>
+    </div>
+  </div>
+</h3>
+
+<ul id="orderList">
+  <li id="orderList0">11 cherry</li>
+  <li id="orderList1">17 chocolate</li>
+  <li id="orderList2">31 plain</li>
+</ul>
+
+</body>
+</html>
