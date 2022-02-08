@@ -18,6 +18,7 @@
 -->
 <!DOCTYPE html>
 <html>
+
 <head>
   <!-- Import the jQuery library, javascript and stylesheet files -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -44,6 +45,7 @@
         <h3>Topping</h3>
       </td>
     </tr>
+
     <!-- The next row holds the quantity options and topping options -->
     <tr>
       <td>
@@ -64,10 +66,10 @@
         </form>
       </td>
 
-      <!-- Radio button for topping -->
+      <!-- Radio button for toppings displayed with label and breaks (plain default with JQUERY) -->
+      <!-- default from: https://www.geeksforgeeks.org/how-to-reset-selected-value-to-default-using-jquery/?ref=lbp -->
       <td>
-        <!-- Toppings displayed with its label and a break after -->
-        <input type="radio" id="plain" name="topping" value="plain" required>
+        <input type="radio" id="plain" name="topping" value="plain" selected="selected">
         <label for="plain">Plain</label><br>
         <input type="radio" id="cherry" name="topping" value="cherry">
         <label for="cherry">Cherry</label><br>
@@ -80,19 +82,13 @@
   <!-- Text for the notes (break the paragraph)-->
   <label id="notesText" for="notes">
     <h3>Notes:</h3>
-  </label>
-  <br>
+  </label> <br>
   <!-- Text area for the special instruction information -->
   <textarea id="notes" name="notes" rows="4" cols="50" value="" placeholder="Enter any special instructions here.">
-</textarea>
-  <br><br>
-
+  </textarea> <br><br>
 
   <!-- Button to order -->
-  <form id="order" action="">
-    <input type="submit" class="order" value="Order">
-  </form>
-  <!-- <h3 id="ty" hidden>Thank you! Your order has been placed</h3> -->
+  <form id="order" action="">  <input type="submit" class="order" value="Order"> </form>
 
   <!-- Total orders for the past month-->
   <h3>Orders for
@@ -115,6 +111,7 @@
     </div>
   </h3>
 
+  <!-- The list of orders per the quantity and topping -->
   <ul id="orderList">
     <li id="cherryOrders">11 cherry</li>
     <li id="chocolateOrders">17 chocolate</li>
