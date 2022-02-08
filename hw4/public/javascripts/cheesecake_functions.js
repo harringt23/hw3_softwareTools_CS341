@@ -52,11 +52,6 @@ monthHandler = function () {
     var monthText = $(this).text();
     $("#monthText").html(monthText);
 
-    // $.post('http://localhost:3000/orders', monthText, function () {
-    //     $('#orderListCherry').text(data[0].quantity + " " + orderArray.data[0].topping);
-    //     $('#orderListPlain').text(data[1].quantity + " " + orderArray.data[1].topping);
-    //     $('#orderListChocolate').text(data[2].quantity + " " + orderArray.data[2].topping);
-    // });
     $.post('\orders', function(orderArray) {
         $("#cherryOrders").hide();
         $("#chocolateOrders").hide();
@@ -66,7 +61,6 @@ monthHandler = function () {
         var newPlainOrders = "<li>" + orderArray.data[2].pla.quantity + " " + orderArray.data[2].pla.topping + "</li>";
         $("#orderList").append(newCherryOrders, newChocolateOrders, newPlainOrders);
     });
-    alert("success"); // TESTING
 }
 
 // read in and handle the events from the main document
@@ -78,21 +72,21 @@ $(document).ready(function () {
     // var buttonText = $(this).text();
     // $("#month").html(buttonText);
 
-    $(".monthClick").click(function () {
-        let month = $(this).text();
-        $(".monthDropdown").text(month);
-        $.post('http://localhost:3000/orders', month, function (data) {
-            // update orders page to match returned object 
-            $('#cherryOrders').text(data[0].quantity + " " + data[0].topping);
-            $('#plainOrders').text(data[1].quantity + " " + data[1].topping);
-            $('#chocolateOrders').text(data[2].quantity + " " + data[2].topping);
-        });
-    });
+    // $(".monthClick").click(function () {
+    //     let month = $(this).text();
+    //     $(".monthDropdown").text(month);
+    //     $.post('http://localhost:3000/orders', month, function (data) {
+    //         // update orders page to match returned object 
+    //         $('#cherryOrders').text(data[0].quantity + " " + data[0].topping);
+    //         $('#plainOrders').text(data[1].quantity + " " + data[1].topping);
+    //         $('#chocolateOrders').text(data[2].quantity + " " + data[2].topping);
+    //     });
+    // });
 
     // alert("success");
     // let month = $(this).text();
     // $(".monthDropdown").text(month);
-    // $(month).click(monthHandler);
+    $("#month").click(monthHandler);
     // // $("#feb").click(monthHandler);
     // $("#mar").click(monthHandler);
     // $("#apr").click(monthHandler);
