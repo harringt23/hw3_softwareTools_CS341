@@ -17,101 +17,57 @@ var router = express.Router();
 // require the database management system
 var dbms = require('./dbms.js');
 
-// create an initial order array
-var orderArray = 
-    {
-        // set data to dummy variables
-        data : [
-            {topping : "cherry",    quantity : 2},
-            {topping : "chocolate", quantity : 6},
-            {topping : "plain",     quantity : 3},
-        ]
-    };
-
-// create a new order object
-var orderObj = 
-    {
-        // initialize error to null 
-        error : null,
-
-        // initialize the order object to default values of zero
-        data : [
-            {TOPPING : "cherry",    QUANTITY : 0},
-            {TOPPING : "chocolate", QUANTITY : 0},
-            {TOPPING : "plain",     QUANTITY : 0},
-        ]
-    };
-
-/**** Topping Functions ****/
-// cherry topping
-function cherryFunction(error, results) {
-    // set the objects values
-    orderObj.data = results;
-    orderObj.error = error;
-
-    // log the data received for testing
-    console.log(orderObj.data);
-
-    // set the quantity to the cherry count
-    orderArray.data[0].quantity = orderObj.data[0].count;
+// function to get the number of orders 
+function get_num_orders(type, month, callback) {
+    dbms.dbquery("SELECT QUANTITY FROM ORDERS WHERE MONTH='"+ month +"' AND TOPPING='"+ type +"';",
+        function (error, results) {
+            var total = 0;
+            if(error != false) {
+                total = "---";
+                console.log("[orders.js] <dbms.dbquery>  |  Error! " + error);
+            } else {
+                for (row of results) {
+                    total = total + row.QUANTITY;
+                }
+            }
+            console.log("[orders.js] <dbms.dbquery>  |  Result for '"+type+"' query: " + total);
+            callback(total);
+        }
+    );
 }
 
-// chocolate topping
-function chocolateFunction(error, results) {
-    // set the objects values
-    orderObj.data = results;
-    orderObj.error = error;
+router.use(function(req, res, next){
+    console.log("[orders.js] <router.use>    |  Redirecting router... ");
+    next();
+});
 
-    // log the data received for testing
-    console.log(orderObj.data);
-
-    // set the quantity to the chocolate count
-    orderArray.data[1].quantity = orderObj.data[0].count;
-}
-
-// chocolate topping
-function plainFunction(error, results) {
-    // set the objects values
-    orderObj.data = results;
-    orderObj.error = error;
-
-    // log the data received for testing
-    console.log(orderObj.data);
-
-    // set the quantity to the count
-    orderArray.data[2].quantity = orderObj.data[0].count;
-}
-
-// // get orders listing 
-// router.get('/', function(req, res, next) {
-//     res.json(orderArray);
-// }); 
-//TODO - determine if needed
-
-// post the order array
 router.post('/', function(req, res, next) {
-    // cherry data
-    dbms.dbquery("SELECT SUM(QUANTITY) AS count FROM ORDERS WHERE MONTH='" + req.body.month + "' AND TOPPING='cherry';", function(error, results) {
-        cherryFunction(error, results);
-
-        // chocolate data
-        dbms.dbquery("SELECT SUM(QUANTITY) AS count FROM ORDERS WHERE MONTH='" + req.body.month + "' AND TOPPING='chocolate';", function(error, results) {
-            chocolateFunction(error, results);
-
-            // plain data 
-            dbms.dbquery("SELECT SUM(QUANTITY) AS count FROM ORDERS WHERE MONTH='" + req.body.month + "' AND TOPPING='plain';", function(error, results) {
-                plainFunction(error, results);
-
-                // put the response into the order array
-                res.json(orderArray);
+    console.log("[orders.js] <router.post>   |  Retrieving request detail")
+    const month = req.query.month;
+    console.log("                            .      " + month + "\n                            .      ");
+    console.log("[orders.js] <router.post>   |  Querying database for quantities for month of '" + month + "'...");
+    // Enter callback hell
+    get_num_orders("CHERRY", month, function(total_cherry) {
+        console.log("[orders.js] <router.post>   |  Returned number for cherry: " +total_cherry);
+        get_num_orders("PLAIN", month, function(total_plain) {
+            console.log("[orders.js] <router.post>   |  Returned number for plain: " +total_plain);
+            get_num_orders("CHOCOLATE", month, function(total_chocolate) {
+                console.log("[orders.js] <router.post>   |  Returned number for chocolate: " +total_chocolate);
+                var response = {
+                    "error":null,
+                    "data":[
+                            {"topping":"cherry", "quantity":total_cherry},
+                            {"topping":"plain", "quantity":total_plain},
+                            {"topping":"chocolate", "quantity":total_chocolate}
+                        ]
+                };
+                console.log("[orders.js] <router.post>   |  Client response prepared:");
+                console.log("                            .      " + JSON.stringify(response));
+                res.json(response);
+                console.log("[orders.js] <router.post>   |  JSON Response has been sent!");
             });
         });
     });
-
-    // TESTING 
-    console.log(orderObj.data[0].count);
-    console.log(req.body.month);
 });
 
-// export the module's router
 module.exports = router;
