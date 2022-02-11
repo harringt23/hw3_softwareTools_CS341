@@ -1,28 +1,28 @@
-/***
- * Brynn Harrington
- * CS 341A 
- * Dr. Tribelhorn
- * Homework #4
- * This CSS file acts as a style sheet for a cheesecake order form website 
- * to increase the aesthetic of the website.
- *
- * NOTES
- * learned the javascript from the following website/tutorial: 
- *  https://www.w3schools.com/js/default.asp
- *
- ***/
+/* cheesecake_functions.js
+ * Homework 5 
+ * @author Brynn Harrington
+ * Date Modified: 10 Feb 2022
+ * 
+ * Handles the functions necessary for the cheesecake form
+ * website database and tracking.
+ * 
+ * Used: https://www.w3schools.com/js/default.asp
+ */
 
 /* Handler to help with the tasks needed to use the submit event */
 submitHandler = function (e) {
     // extract the values of the text and "vegan" key-phrase 
-    //TODO convert back to case insensitive 
-    var notesText = document.getElementById('notes').value;
-    var veg = 'vegan';
+    var notesText = $.trim($("#notes").val());
+    var veganCheck = notesText.toLowerCase().indexOf("vegan");
+    var warning = "Warning, these cheesecakes contain dairy. Do you still want to order?";
 
-    // checking to see if notes contain the word "vegan"
-    if (notesText.indexOf(veg) != -1) {
-        alert("Warning, these cheesecakes contain dairy. Do you still want to order?"); // alerts if word is found
+    // checking to see if notes contain the word "vegan" and confirm their order
+    if (veganCheck != -1) {
+        if(!confirm(warning)){
+            alert("Order successfully canceled. Have a nice day!");            
+        }        
     }
+
     // otherwise submit the entries and hide the elements no longer needing to be used
     else {
         // hide unnecessary elements
@@ -33,13 +33,21 @@ submitHandler = function (e) {
 
         // determine the values of necessary items / write thank you message
         var topping = $("input[name='topping']:checked").val();
-        var quantity = $('#quantity :selected').text();
+        var quantity = $('#quantity:selected').text();
         var message = "<h3>Thank you! Your order has been placed</h3>";
 
         // write an alert for the parameters
         var toppingsAlert = "<p>Topping: " + topping + "</p>"
         var quantityAlert = "<p>Quantity: " + quantity + "</p>"
         var notesAlert = "<p>Notes: " + notesText + "</p>"
+
+        // send the order information through post
+        $.post("https://localhost:3000/process_orders",
+        {
+            quantity : $("quantity:selected").val(),
+            topping : $("input[name='topping']:checked"),
+            notes : $('#notes').val(),
+        });
 
         // alert the users of what they ordered
         alert("Thank you! Your order has been placed. Here are the details:"
