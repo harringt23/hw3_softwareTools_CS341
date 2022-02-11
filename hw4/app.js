@@ -1,3 +1,11 @@
+/* app.js
+ * Homework 5 
+ * @author Brynn Harrington
+ * Date Modified: Feb 10
+ * 
+ * Base app.js file from express with addition of a new routes/orders to track
+ * the cheesecake orders.
+ */
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
