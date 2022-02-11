@@ -15,7 +15,6 @@
      async = require('async');
  
  // updated the host to my personal (very insecure) cheesecake database information
- //TODO - figure out user and password
  var host = "35.199.147.68";    //from GCloud instance (change to match your db)
  var database = "CHEESECAKE";  //database name
  var user = "student";         //username (change to match your db)
