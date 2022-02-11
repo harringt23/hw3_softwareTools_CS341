@@ -246,21 +246,6 @@ li {
     padding-left: 10px;
 }
 
-
-/* Style the each list  */
-
-#cherry-li {
-    list-style-image: url(/images/cherry_li.png);
-}
-
-#chocolate-li {
-    list-style-image: url(/images/chocolate_li.png);
-}
-
-#plain-li {
-    list-style-image: url(/images/plain_li.png);
-}
-
 .special-heading {
     font-weight: 600;
     font-size: 25px;
