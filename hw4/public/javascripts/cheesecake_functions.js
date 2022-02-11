@@ -71,9 +71,9 @@ monthHandler = function () {
     // send the document through post by the conditions of the function with the order array parameter
     $.post('\orders', { month: monthText }, function(orderArray) {
         // hide the current orders
-        // $("#cherryOrders").hide();
-        // $("#chocolateOrders").hide();
-        // $("#orderList").hide();
+        $("#cherryOrders").hide();
+        $("#chocolateOrders").hide();
+        $("#orderList").hide();
 
         var newCherryOrders = "<li>" + orderArray.data[0].cherry.quantity + " " + orderArray.data[0].cherry.topping + "</li>";
         var newChocolateOrders = "<li>" + orderArray.data[1].chocolate.quantity + " " + orderArray.data[1].chocolate.topping + "</li>";

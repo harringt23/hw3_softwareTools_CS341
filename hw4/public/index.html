@@ -69,12 +69,12 @@
       <!-- Radio button for toppings displayed with label and breaks (plain default with JQUERY) -->
       <!-- default from: https://www.geeksforgeeks.org/how-to-reset-selected-value-to-default-using-jquery/?ref=lbp -->
       <td>
-        <input type="radio" id="plain" name="topping" value="plain" selected="selected">
-        <label for="plain">Plain</label><br>
-        <input type="radio" id="cherry" name="topping" value="cherry">
+        <input type="radio" id="cherry" name="topping" value="cherry" checked>
         <label for="cherry">Cherry</label><br>
         <input type="radio" id="chocolate" name="topping" value="chocolate">
-        <label for="chocolate">Chocolate</label>
+        <label for="chocolate">Chocolate</label><br>
+        <input type="radio" id="plain" name="topping" value="plain">
+        <label for="plain">Plain</label><br>
       </td>
     </tr>
   </table>
@@ -82,7 +82,7 @@
   <!-- Text for the notes (break the paragraph)-->
   <label id="notesText" for="notes">
     <h3>Notes:</h3>
-  </label> <br>
+  </label>
   <!-- Text area for the special instruction information -->
   <textarea id="notes"name="notes"rows="4"cols="50"value=""placeholder="Enter any special instructions here."></textarea> <br><br>
 
