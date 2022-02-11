@@ -69,19 +69,21 @@ monthHandler = function () {
     $("#monthText").html(monthText);
 
     // send the document through post by the conditions of the function with the order array parameter
-    $.post('\orders', function(orderArray) {
+    $.post('\orders', { month: monthText }, function(orderArray) {
         // hide the current orders
-        $("#cherryOrders").hide();
-        $("#chocolateOrders").hide();
-        $("#orderList2").hide();
+        // $("#cherryOrders").hide();
+        // $("#chocolateOrders").hide();
+        // $("#orderList").hide();
 
-        // determine the new orders
         var newCherryOrders = "<li>" + orderArray.data[0].cherry.quantity + " " + orderArray.data[0].cherry.topping + "</li>";
         var newChocolateOrders = "<li>" + orderArray.data[1].chocolate.quantity + " " + orderArray.data[1].chocolate.topping + "</li>";
         var newPlainOrders = "<li>" + orderArray.data[2].plain.quantity + " " + orderArray.data[2].plain.topping + "</li>";
 
         // append the new orders to the page
-        $("#orderList").append(newCherryOrders, newChocolateOrders, newPlainOrders);
+        //$("#orderList").append(newCherryOrders, newChocolateOrders, newPlainOrders);
+        $("#cherryOrders").html(newCherryOrders);
+        $("#chocolateOrders").html(newChocolateOrders);
+        $("#plainOrders").html(newPlainOrders);
     });
 }
 
