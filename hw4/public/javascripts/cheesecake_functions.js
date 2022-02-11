@@ -68,9 +68,9 @@ monthHandler = function () {
         $("#orderList2").hide();
 
         // determine the new orders
-        var newCherryOrders = "<li>" + orderArray.data[0].cher.quantity + " " + orderArray.data[0].cher.topping + "</li>";
-        var newChocolateOrders = "<li>" + orderArray.data[1].choc.quantity + " " + orderArray.data[1].choc.topping + "</li>";
-        var newPlainOrders = "<li>" + orderArray.data[2].pla.quantity + " " + orderArray.data[2].pla.topping + "</li>";
+        var newCherryOrders = "<li>" + orderArray.data[0].cherry.quantity + " " + orderArray.data[0].cherry.topping + "</li>";
+        var newChocolateOrders = "<li>" + orderArray.data[1].chocolate.quantity + " " + orderArray.data[1].chocolate.topping + "</li>";
+        var newPlainOrders = "<li>" + orderArray.data[2].plain.quantity + " " + orderArray.data[2].plain.topping + "</li>";
 
         // append the new orders to the page
         $("#orderList").append(newCherryOrders, newChocolateOrders, newPlainOrders);
