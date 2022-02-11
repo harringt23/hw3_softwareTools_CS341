@@ -12,6 +12,8 @@
  * https://stackoverflow.com/questions/6805482/css3-transition-animation-on-load
  * Used (Dropdown):
  * https://www.tutorialrepublic.com/faq/show-hide-dropdown-menu-on-mouse-hover-using-css.php
+ 
+ * TODO finish commenting!!
  */
 
 
@@ -346,7 +348,7 @@ textarea {
 }
 
 #testimonial-arrow {
-    background-image: url(/images/testamonial_arrow.png);
+    background-image: url(/images/testimonial_arrow.png);
     background-size: 82px 200px;
     margin-top: auto;
     margin-bottom: auto;
@@ -381,51 +383,7 @@ h3 {
 
 
 /********************************************************
-* Bottom Bar
-*
-********************************************************/
-
-@keyframes fadeInAndSlide {
-    0% {
-        opacity: 0%;
-        bottom: 0;
-    }
-    75% {
-        opacity: 0%;
-    }
-    95% {
-        bottom: 0;
-    }
-    100% {
-        opacity: 100%;
-        bottom: -40px;
-    }
-}
-
-#bottom-bar {
-    display: block !important;
-    position: fixed;
-    bottom: -40px;
-    right: 0;
-    left: 0;
-    text-align: center;
-    color: rgba(110, 70, 10, 1);
-    padding: 15px;
-    background-image: url(/images/parchment_background.png);
-    background-repeat: repeat;
-    -moz-box-shadow: 0 0 50px rgba(200, 120, 50, 0.75), inset 0 0 25px rgba(200, 180, 120, 0.5);
-    -webkit-box-shadow: 0 0 50px rgba(200, 120, 50, 0.75), inset 0 0 25px rgba(200, 180, 120, 0.5);
-    box-shadow: 0 0 50px rgba(200, 120, 50, 0.75), inset 0 0 25px rgba(200, 180, 120, 0.5);
-    animation: 5.5s ease-out 0s 1 fadeInAndSlide;
-}
-
-#bottom-bar:hover {
-    bottom: 0;
-}
-
-
-/********************************************************
-* Arrow Card
+* Dropdown Menu
 *
 ********************************************************/
 
