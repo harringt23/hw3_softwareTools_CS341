@@ -24,6 +24,7 @@ function get_num_orders(type, month, callback) {
             var total = 0;
             if(error != false) {
                 total = "---";
+                // testing 
                 console.log("[orders.js] <dbms.dbquery>  |  Error! " + error);
             } else {
                 for (row of results) {
@@ -36,7 +37,8 @@ function get_num_orders(type, month, callback) {
     );
 }
 
-router.use(function(req, res, next){
+router.use(function(req, res, next) {
+    // testing
     console.log("[orders.js] <router.use>    |  Redirecting router... ");
     next();
 });

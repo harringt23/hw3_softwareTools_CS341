@@ -1,4 +1,4 @@
-/* orders.js
+/* neworder.js
  * Homework 5 
  * @author Brynn Harrington
  * Date Modified: 10 Feb 2022
