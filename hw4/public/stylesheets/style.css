@@ -279,11 +279,9 @@ td {
 }
 
 textarea {
-    /* font-family: 'Montserrat', sans-serif; */
     font-size: 14px;
     padding: 8px;
     width: 100%;
-    /* background-image: url(/images/background.png); */
     background-repeat: repeat;
     border-width: 3px;
     border-style: dashed;
@@ -326,7 +324,7 @@ textarea {
     }
 }
 
-#testamonials {
+#testimonials {
     background-image: url(/images/parchment_background.png);
     position: fixed;
     display: flex;
@@ -342,12 +340,12 @@ textarea {
     animation: 4s ease-out 0s 1 fadeIn;
 }
 
-#testamonials:hover {
+#testimonials:hover {
     right: 0;
     transition: 0.5s;
 }
 
-#testamonial-arrow {
+#testimonial-arrow {
     background-image: url(/images/testamonial_arrow.png);
     background-size: 82px 200px;
     margin-top: auto;
