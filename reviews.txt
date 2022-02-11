@@ -1,0 +1,31 @@
+<!-- Header (smaller so h3) text for "customer feedback" -->
+    <h2 class="reviews">Customer Reviews</h2>
+    <!-- Table to organize the reviews -->
+    <table>
+        <tr>
+            <td>
+                <!-- Gordon Ramsey -->
+                <img src="https://tinyurl.com/yckn6jxc" name="GordonRamsey" width="300" height="180">
+                <p> - GordonRamsey </p>
+            </td>
+            <td>
+                <!-- Shaquille O'Neal -->
+                <img src="https://tinyurl.com/2p85s3yv" name="ShaquilleONeal" width="200" height="180">
+                <p> - Shaquille O'Neal </p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <!-- Tina Fey -->
+                <img src="https://tinyurl.com/y4mzmbzd" name="TinaFey" width="300" height="180">
+                <p> - Tina Fey </p>
+            </td>
+            <td>
+                <!-- Jim Carrey -->
+                <img src="https://tinyurl.com/23ddn7cc" name="JimCarrey" width="250" height="180">
+                <p> - Jim Carrey </p>
+            </td>
+        </tr>
+    </table>
+
+    /// currently messing up the rest of hte HTML 

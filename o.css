@@ -1,77 +1,50 @@
-/* style.js
- * Homework 5 
- * @author Brynn Harrington
- * Date Modified: 10 Feb 2022
- * 
- * The style sheet for the cheesecake order form website 
- * to increase the aesthetic of the website.
- * 
- * Used (CSS Tutorials): 
- * https://www.w3schools.com/css/default.asp
- * Used (Animation): 
- * https://stackoverflow.com/questions/6805482/css3-transition-animation-on-load
- * Used (Dropdown):
- * https://www.tutorialrepublic.com/faq/show-hide-dropdown-menu-on-mouse-hover-using-css.php
- */
+/* Author: Philip Robinson */
 
 
-/* Set standard for all  */
-
-* {
-    color: rgb(73, 10, 29);
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-}
+/****************************/
 
 
-/********************************************************
- * Cursor Styling 
- * Sets the cursors to the appropriate style cake 
- ********************************************************/
+/* Set up custom cursor CSS */
 
 
-/* Basic/Plain cursor */
+/****************************/
 
-.cursor,
-.plain {
+.cursor {
     cursor: url(/images/plain_cursor.png), auto;
 }
-
-
-/* Cherry cursor */
 
 .cherry {
     cursor: url(/images/cherry_cursor.png), auto;
 }
 
-
-/* Chocolate cursor */
-
 .chocolate {
     cursor: url(/images/chocolate_cursor.png), auto;
 }
 
-
-/********************************************************
- * Background and Body Styling 
- * Sets the desired aesthetics of the background and body
- ********************************************************/
-
-
-/* Set the background as the cheesecake image */
-
-body {
-    background-image: url(https://tinyurl.com/2p86xjnp);
-    background-size: auto;
-    z-index: -2;
+.plain {
+    cursor: url(/images/plain_cursor.png), auto;
 }
 
 
-/* Introduce a gradient layer of the cheesecake image */
+/***********************************/
+
+
+/* Set background and body styling */
+
+
+/***********************************/
+
+body {
+    background-image: url(/images/background_cheesecake.jpg);
+    background-size: cover;
+    z-index: -2;
+    font-family: 'Montserrat', sans-serif;
+}
 
 #gradient-layer {
     z-index: -1;
-    background-color: rgb(228, 181, 181);
-    background: linear-gradient(rgba(220, 190, 190, 0.8), rgba(240, 180, 200, 0.75), rgb(240, 140, 170, 100%));
+    background: rgb(255, 191, 192);
+    background: linear-gradient( rgba(235, 200, 200, 0.875) 0%, rgba(255, 190, 210, 0.85) 66.6%, rgba(255, 150, 180, 1) 100%);
     position: fixed;
     top: 0;
     right: 0;
@@ -80,19 +53,23 @@ body {
 }
 
 
-/********************************************************
- * Styling for the main
- * Sets the correct tabular formats and introduces more
- * aesthetically pleasing options
- ********************************************************/
+/*****************************/
 
 
-/* Introduce an element to fade in the order form */
+/* Styling for the main card */
+
+
+/*****************************/
+
+
+/*
+Citation:
+https://stackoverflow.com/questions/6805482/css3-transition-animation-on-load
+*/
 
 @keyframes fadeAndTurn {
     0% {
         opacity: 0%;
-        /* all the  */
         transform: rotate3d(0.5, 1, 0, 20deg);
     }
     50% {
@@ -105,26 +82,20 @@ body {
     }
 }
 
-
-/* Wrap the content and introduce a shadow */
-
 #content-wrapper {
     margin: auto;
     position: absolute;
     top: 10%;
     right: 10%;
     left: 10%;
-    -moz-box-shadow: 0 0 25px rgba(200, 50, 70, 0.75);
-    -webkit-box-shadow: 0 0 25px rgba(200, 50, 70, 0.75);
-    box-shadow: 0 0 25px rgba(200, 50, 70, 0.75);
-    animation: 2s ease-out 0s 1 fadeAndTurn;
+    -moz-box-shadow: 0 0 25px rgba(200, 120, 50, 0.75);
+    -webkit-box-shadow: 0 0 25px rgba(200, 120, 50, 0.75);
+    box-shadow: 0 0 25px rgba(200, 120, 50, 0.75);
+    animation: 3s ease-out 0s 1 fadeAndTurn;
 }
 
-
-/* Initialize the header */
-
 #header {
-    /* background-image: url(/images/background.png); */
+    background-image: url(/images/parchment_background.png);
     background-repeat: repeat;
     border-style: dashed;
     border-top: 3px;
@@ -142,28 +113,25 @@ body {
     text-align: center;
 }
 
-
-/* Set the parameters for h1 and h3 */
-
 h1,
-h3 {
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Playfair Display', serif;
     font-weight: 600;
+    color: rgba(110, 70, 10, 1);
     text-shadow: 2px 2px 5px rgba(77, 38, 0, 0.25);
 }
-
-
-/* Set the font size for h1 */
 
 h1 {
     font-size: 50px;
 }
 
-
-/* Style the form-content class */
-
 #form-content {
     display: flex;
-    /* background-image: url(/images/background.png); */
+    background-image: url(/images/parchment_background.png);
     background-repeat: repeat;
     -moz-box-shadow: inset 0 0 50px rgba(200, 120, 50, 0.175);
     -webkit-box-shadow: inset 0 0 50px rgba(200, 120, 50, 0.175);
@@ -171,20 +139,16 @@ h1 {
     padding: 20px;
 }
 
-
-/* Style the form */
-
 form {
     padding: 20px;
     width: 100%;
 }
 
-
-/* Style the quantity  */
-
 #quantity {
+    font-family: 'Montserrat', sans-serif;
     font-size: 15px;
     font-weight: bold;
+    color: rgba(110, 70, 10, 1);
     width: 80px;
     background-color: rgba(255, 255, 255, 0.5);
     text-align: center;
@@ -193,9 +157,6 @@ form {
     border-color: rgba(210, 190, 170, 1);
     border-radius: 4px;
 }
-
-
-/* Style the image class */
 
 #img {
     margin: 20px;
@@ -208,15 +169,12 @@ form {
     border-radius: 12px;
 }
 
-
-/* Style the order button */
-
 #order-button {
     width: 100%;
     margin-left: auto;
     margin-right: auto;
     padding: 15px;
-    /* font-family: 'Playfair Display', serif; */
+    font-family: 'Playfair Display', serif;
     font-size: 25px;
     color: rgba(190, 80, 80, 1);
     text-shadow: 1px 1px 4px rgba(77, 38, 0, 0.25);
@@ -227,26 +185,17 @@ form {
     border-radius: 12px;
 }
 
-
-/* Style the hover button */
-
 #order-button:hover {
     background-color: rgba(230, 200, 180, 0.875);
     ;
     font-weight: bold;
 }
 
-
-/* Style the list */
-
 li {
     font-size: 20px;
     margin-left: 20px;
     padding-left: 10px;
 }
-
-
-/* Style the each list  */
 
 #cherry-li {
     list-style-image: url(/images/cherry_li.png);
@@ -261,7 +210,7 @@ li {
 }
 
 .special-heading {
-    /* font-family: 'Playfair Display', serif; */
+    font-family: 'Playfair Display', serif;
     font-weight: 600;
     font-size: 25px;
     color: rgba(110, 70, 10, 1);
@@ -279,11 +228,11 @@ td {
 }
 
 textarea {
-    /* font-family: 'Montserrat', sans-serif; */
+    font-family: 'Montserrat', sans-serif;
     font-size: 14px;
     padding: 8px;
     width: 100%;
-    /* background-image: url(/images/background.png); */
+    background-image: url(/images/parchment_background.png);
     background-repeat: repeat;
     border-width: 3px;
     border-style: dashed;
@@ -309,10 +258,13 @@ textarea {
 }
 
 
-/********************************************************
-* Arrow Card
-*
-********************************************************/
+/*************************************/
+
+
+/* Styling for the testamonial card  */
+
+
+/*************************************/
 
 @keyframes fadeIn {
     0% {
@@ -382,10 +334,13 @@ h3 {
 }
 
 
-/********************************************************
-* Bottom Bar
-*
-********************************************************/
+/******************************/
+
+
+/* Styling for the bottom bar */
+
+
+/******************************/
 
 @keyframes fadeInAndSlide {
     0% {
@@ -426,10 +381,13 @@ h3 {
 }
 
 
-/********************************************************
-* Arrow Card
-*
-********************************************************/
+/*********************************/
+
+
+/* Styling for the dropdown menu */
+
+
+/*********************************/
 
 #selector {
     display: inline-block;
@@ -465,6 +423,12 @@ h3 {
     box-shadow: 0 0 20px rgba(200, 120, 50, 0.5), inset 0 0 20px rgba(200, 120, 50, 0.25);
     z-index: 5;
 }
+
+
+/*
+CREDIT FOR DROPDOWN HOVER METHOD:
+https://www.tutorialrepublic.com/faq/show-hide-dropdown-menu-on-mouse-hover-using-css.php
+*/
 
 .dropdown:hover .dropdowncontent {
     display: block;
