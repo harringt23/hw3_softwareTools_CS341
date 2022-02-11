@@ -1,8 +1,17 @@
+/* style.js
+ * Homework 5 
+ * @author Brynn Harrington
+ * Date Modified: 10 Feb 2022
+ * 
+ * Base app.js file from express with addition of a new routes/orders to track
+ * the cheesecake orders.
+ */
+
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+    padding: 50px;
+    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
 a {
-  color: #00B7FF;
+    color: #00B7FF;
 }
