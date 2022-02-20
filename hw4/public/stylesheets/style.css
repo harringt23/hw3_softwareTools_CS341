@@ -307,7 +307,7 @@ textarea {
     }
 }
 
-#testimonials {
+#monthly-orders {
     background-image: url(/images/parchment_background.png);
     position: fixed;
     display: flex;
@@ -323,13 +323,13 @@ textarea {
     animation: 4s ease-out 0s 1 fadeIn;
 }
 
-#testimonials:hover {
+#monthly-orders:hover {
     right: 0;
     transition: 0.5s;
 }
 
-#testimonial-arrow {
-    background-image: url(/images/testimonial_arrow.png);
+#arrow {
+    background-image: url(/images/arrow.png);
     background-size: 82px 200px;
     margin-top: auto;
     margin-bottom: auto;
